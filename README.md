@@ -64,3 +64,10 @@ Installation
  1. Load up Vim
  2. Run the command ":GoInstallBinaries"
  3. Occasionally update binaries with ":GoUpdateBinaries"
+
+### Install theme
+
+ 1. Open up files folder
+ 2. Double click on 'Visor.terminal' and install
+ 3. If you're using Total Terminal, this will work by default, otherwise open
+    your terminal preferences and choose this.
