@@ -33,8 +33,3 @@ done
 
 # If backup directory is empty, delete it
 [ "$(ls -A $BACKUP_DIR)" ] || rm -r $BACKUP_DIR
-
-# Set zsh to the default shell
-if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
-    chsh -s $(which zsh)
-fi

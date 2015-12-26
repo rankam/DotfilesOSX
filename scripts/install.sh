@@ -25,6 +25,17 @@ which -s htop || brew install htop
 which -s wget || brew install wget
 which -s ssh-copy-id || brew install ssh-copy-id
 
+# Install grep (might be required for powerline on tmux)
+brew tap homebrew/dupes
+brew install homebrew/dupes/grep
+
+# Install hack powerline fonts
+wget https://github.com/powerline/fonts/raw/master/Hack/Hack-Bold.ttf
+wget https://github.com/powerline/fonts/raw/master/Hack/Hack-BoldItalic.ttf
+wget https://github.com/powerline/fonts/raw/master/Hack/Hack-Italic.ttf
+wget https://github.com/powerline/fonts/raw/master/Hack/Hack-Regular.ttf
+mv Hack-* /Library/Fonts/
+
 # Install databases
 echo "Installing databases"
 which -s postgresql || brew install postgresql
@@ -32,6 +43,12 @@ which -s cassandra || brew install cassandra
 which -s mongodb || brew install mongodb
 which -s redis || brew install redis
 which -s memcached || brew install memcached
+
+# Set zsh to the default shell
+which -s zsh || brew install zsh
+if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
+    chsh -s $(which zsh)
+fi
 
 # Install git submodules
 git submodule init
@@ -102,3 +119,5 @@ if [[ $? != 0 ]] ; then
     echo "Installing Node"
     brew install node
 fi
+
+
