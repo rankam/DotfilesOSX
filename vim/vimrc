@@ -1,7 +1,44 @@
 " Turn off Vi compatibility mode (must appear first)
     set nocompatible
 
-    " NeoBundle Stuff
+    " NeoBundle Setup
+    "
+        if has('vim_starting')
+            " Required:
+            set
+            runtimepath+=~/.vim/bundle/neobundle.vim/
+        endif
+
+        " Required:
+        call
+        neobundle#begin(expand('~/.vim/bundle'))
+
+        " Let NeoBundle manage NeoBundle
+        " Required:
+        NeoBundleFetch 'Shougo/neobundle.vim'
+
+        " Add or remove your Bundles here:
+        NeoBundle 'scrooloose/nerdtree'
+        NeoBundle 'jistr/vim-nerdtree-tabs'
+        NeoBundle 'Shougo/neosnippet.vim'
+        NeoBundle 'Shougo/neosnippet-snippets'
+        NeoBundle 'tpope/vim-fugitive'
+        NeoBundle 'ctrlpvim/ctrlp.vim'
+        NeoBundle 'flazz/vim-colorschemes'
+        NeoBundle 'fatih/vim-go'
+        NeoBundle 'terryma/vim-multiple-cursors'
+        NeoBundle 'tsaleh/vim-align'
+        NeoBundle 'tpope/vim-markdown'
+
+        " Required:
+        call neobundle#end()
+
+        " Required:
+        filetype plugin indent on
+
+        " If there are uninstalled bundles found on startup,
+        " this will conveniently prompt you to install them.
+        NeoBundleCheck
 
     " Misc configuration
 
@@ -25,6 +62,7 @@
 
     " Misc. Mappings (Try to keep fairly vanilla)
         map <tab><tab> <C-w><C-w>
+        map gb :call Browser()<CR>
 
     " Themes and colours
         set t_Co=256
@@ -34,10 +72,6 @@
         " Highlight characters that go over 80 columns
             highlight OverLength ctermbg=red ctermfg=white guibg=#592929
             match OverLength /\%81v.\+/
-
-        " Syntax highlight our markdown files pls!
-            autocmd BufRead,BufNewFile *.md set filetype=markdown
-            autocmd BufRead,BufNewFile *.markdown set filetype=markdown
 
         " The UI settings
             set number
@@ -80,10 +114,31 @@
             let g:go_fmt_command = "goimports"
 
 " Functions
+
+    " HighlightSearch is used in setting up the status bar
     function! HighlightSearch()
         if &hls
             return 'H'
         else
             return ''
+        endif
+    endfunction
+
+    " Browser will look on the line for a URL, then open it in Google Chrome
+    function! Browser ()
+        let url = matchstr(getline("."), '\%\(http:\/\/\|www\.\|https:\/\/\)[^ ,;\t()]*')
+        if url != ""
+
+            let containsHttp = matchstr(url, '\%^http')
+
+            " If there's no http prefix then plonk one on
+            if containsHttp == ""
+                let url = "http://" . url
+            endif
+
+            " If we have a URL then launch in chrome
+            exec "!open '/Applications/Google\ Chrome.app' ".url
+        else
+            echo "No URL found on line"
         endif
     endfunction
