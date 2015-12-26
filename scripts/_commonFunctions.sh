@@ -11,5 +11,6 @@ function listSymlinkFiles() {
     find $(topLevelDirectory)\
         -not -path '*/\.*'\
         -not -path '*scripts/*'\
+        -not -path '*files/*'\
         -maxdepth 2 -mindepth 2
 }
