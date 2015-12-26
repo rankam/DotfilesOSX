@@ -1,6 +1,17 @@
 OSX Dotfiles
 ============
 
+These are my most recent dotfiles. Things to note are:
+
+ + This is focused on Vim as an editor and uses NeoBundle
+ + This is focused on programming, primarily in Python and Go
+ + It's only intended to work with OSX
+ + It relies on Homebrew (and it's dependencies, you'll need XCode setup)
+ + It automatically generates symbolic links from files one level deep,
+   ignoring the top level directory (so it can be used for organisational
+   purposes). It will only generate dotfiles (I.e. it will always add the dot
+   prefix to files).
+
 Covers
 ------
 
@@ -16,7 +27,7 @@ Covers
    + [x] Syntax
  + [x] Tmux
  + [x] Zshrc
- + [ ] Installing symlinks
+ + [x] Installing symlinks
  + [ ] Removing symlinks
 
 Installation
@@ -39,3 +50,9 @@ Installation
 ### Setup symlinks
 
     bash ./scripts/makeSymlinks.sh
+
+### Installing the NeoBundle bundles
+
+ 1. Load up Vim
+ 2. You should be prompted to install there, press Y and wait
+ 3. If you are not prompted, run the command ":NeoBundleInstall"
