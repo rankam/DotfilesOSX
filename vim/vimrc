@@ -1,0 +1,89 @@
+" Turn off Vi compatibility mode (must appear first)
+    set nocompatible
+
+    " NeoBundle Stuff
+
+    " Misc configuration
+
+        " Detection, plugin and indent set to on
+            filetype plugin indent on
+
+        " Fix backspace
+            set backspace=indent,eol,start
+
+    " NERDTree configuration
+        map <C-n> :NERDTreeToggle<CR>
+        autocmd vimenter * NERDTree
+        autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+    " Multiple-cursors configuration
+        let g:multi_cursor_use_default_mapping=0
+        let g:multi_cursor_next_key='<C-d>'
+        let g:multi_cursor_prev_key='<C-p>'
+        let g:multi_cursor_skip_key='<C-x>'
+        let g:multi_cursor_quit_key='<Esc>'
+
+    " Misc. Mappings (Try to keep fairly vanilla)
+        map <tab><tab> <C-w><C-w>
+
+    " Themes and colours
+        set t_Co=256
+        syntax enable
+        syntax on
+
+        " Highlight characters that go over 80 columns
+            highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+            match OverLength /\%81v.\+/
+
+        " Syntax highlight our markdown files pls!
+            autocmd BufRead,BufNewFile *.md set filetype=markdown
+            autocmd BufRead,BufNewFile *.markdown set filetype=markdown
+
+        " The UI settings
+            set number
+            set cul
+            set laststatus=2
+            set nohlsearch
+            set incsearch
+            set ignorecase
+            set ruler
+            set showmatch
+
+            " The Status line
+                set statusline=
+                set statusline+=%7*\[%n]                                  "buffernr
+                set statusline+=%1*\ %<%F\                                "File+path
+                set statusline+=%2*\ %y\                                  "FileType
+                set statusline+=%3*\ %{''.(&fenc!=''?&fenc:&enc).''}      "Encoding
+                set statusline+=%3*\ %{(&bomb?\",BOM\":\"\")}\            "Encoding2
+                set statusline+=%4*\ %{&ff}\                              "FileFormat (dos/unix..) 
+                set statusline+=%5*\ %{&spelllang}\%{HighlightSearch()}\  "Spellanguage & Highlight on?
+                set statusline+=%8*\ %=\ row:%l/%L\ (%03p%%)\             "Rownumber/total (%)
+                set statusline+=%9*\ col:%03c\                            "Colnr
+                set statusline+=%0*\ \ %m%r%w\ %P\ \                      "Modified? Readonly? Top/bot.
+
+    " Text formatting
+        set autoindent
+        set tabstop=4
+        set softtabstop=4
+        set shiftwidth=4
+        set shiftround
+        set expandtab
+        set smarttab
+        set nowrap
+        set listchars=tab:>-,trail:-
+        set list
+
+    " Programming language specific
+
+        " Go(lang)
+            let g:go_fmt_command = "goimports"
+
+" Functions
+    function! HighlightSearch()
+        if &hls
+            return 'H'
+        else
+            return ''
+        endif
+    endfunction
