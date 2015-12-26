@@ -1,5 +1,5 @@
-[submodule "/Users/Ganners/DotfilesOSX/vim/vim/bundle/neobundle.vim"]
-	path = /Users/Ganners/DotfilesOSX/vim/vim/bundle/neobundle.vim
+[submodule "vim/vim/bundle/neobundle.vim"]
+	path = vim/vim/bundle/neobundle.vim
 	url = https://github.com/Shougo/neobundle.vim
 [submodule "tmux/tmux/tmux-powerline"]
 	path = tmux/tmux/tmux-powerline
