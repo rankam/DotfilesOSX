@@ -8,3 +8,6 @@ Thumbs.DB
 *.swp
 *.swo
 vim/vim/.netrwhist
+
+# NeoBundle Ignores
+vim/vim/bundle/*
