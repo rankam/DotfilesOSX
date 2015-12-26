@@ -4,7 +4,7 @@ OSX Dotfiles
 These are my most recent dotfiles. Things to note are:
 
  + This is focused on Vim as an editor and uses NeoBundle
- + This is focused on programming, primarily in Python and Go
+ + This is focused on programming, primarily Go
  + It's only intended to work with OSX
  + It relies on Homebrew (and it's dependencies, you'll need XCode setup)
  + It automatically generates symbolic links from files one level deep,
@@ -26,9 +26,11 @@ Covers
    + [x] Custom functions
    + [x] Syntax
  + [x] Tmux
+   + [x] Powerline and theme
  + [x] Zshrc
+   + [x] Oh my zsh and themes
  + [x] Installing symlinks
- + [ ] Removing symlinks
+ + [x] Removing symlinks
 
 Installation
 ------------
@@ -56,3 +58,9 @@ Installation
  1. Load up Vim
  2. You should be prompted to install there, press Y and wait
  3. If you are not prompted, run the command ":NeoBundleInstall"
+
+### Installing vim-go dependencies
+
+ 1. Load up Vim
+ 2. Run the command ":GoInstallBinaries"
+ 3. Occasionally update binaries with ":GoUpdateBinaries"
