@@ -23,6 +23,7 @@ which -s vim || brew install vim
 which -s tmux || brew install tmux
 which -s htop || brew install htop
 which -s wget || brew install wget
+which -s ctags || brew install ctags
 which -s ssh-copy-id || brew install ssh-copy-id
 
 # Install grep (might be required for powerline on tmux)

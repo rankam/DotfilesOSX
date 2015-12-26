@@ -43,7 +43,6 @@ NeoBundleCheck
         set backspace=indent,eol,start
 
 " NERDTree configuration
-    map <C-n> :NERDTreeToggle<CR>
     autocmd vimenter * NERDTree
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
@@ -55,8 +54,10 @@ NeoBundleCheck
     let g:multi_cursor_quit_key='<Esc>'
 
 " Misc. Mappings (Try to keep fairly vanilla)
+    map <C-n> :NERDTreeToggle<CR>
     map <tab><tab> <C-w><C-w>
     map gb :call Browser()<CR>
+    nmap <F8> :TagbarToggle<CR>
 
 " Themes and colours
     set t_Co=256
