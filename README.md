@@ -4,11 +4,11 @@ OSX Dotfiles
 Covers
 ------
 
- + [ ] Installation
-   + [ ] Homebrew
-   + [ ] Go
-   + [ ] Zshell
-   + [ ] Common utilities (git, mercurial, wget, ssh-copy-id, htop)
+ + [x] Installation
+   + [x] Homebrew
+   + [x] Go
+   + [x] Zshell
+   + [x] Common utilities (git, mercurial, wget, ssh-copy-id, htop)
  + [ ] Vim
    + [ ] Config
    + [ ] Bundles
