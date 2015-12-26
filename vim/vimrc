@@ -19,15 +19,12 @@
         NeoBundle 'Shougo/neosnippet-snippets'
         NeoBundle 'tpope/vim-fugitive'
         NeoBundle 'ctrlpvim/ctrlp.vim'
-        NeoBundle 'flazz/vim-colorschemes'
         NeoBundle 'fatih/vim-go'
         NeoBundle 'terryma/vim-multiple-cursors'
         NeoBundle 'tsaleh/vim-align'
         NeoBundle 'tpope/vim-markdown'
         NeoBundle 'majutsushi/tagbar'
-
-        " You can specify revision/branch/tag.
-        NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
+        NeoBundle 'itchyny/lightline.vim'
 
     call neobundle#end()
 
@@ -52,6 +49,42 @@ NeoBundleCheck
     let g:multi_cursor_prev_key='<C-p>'
     let g:multi_cursor_skip_key='<C-x>'
     let g:multi_cursor_quit_key='<Esc>'
+
+" Vim-lightline configuration
+
+    let g:lightline = {
+        \     'mode_map': { 'c': 'NORMAL' },
+        \     'active': {
+        \       'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
+        \     },
+        \     'component_function': {
+        \       'modified': 'LightLineModified',
+        \       'fileformat': 'LightLineFileformat',
+        \       'filetype': 'LightLineFiletype',
+        \       'fileencoding': 'LightLineFileencoding',
+        \       'mode': 'LightLineMode',
+        \     },
+        \ }
+
+    function! LightLineModified()
+        return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+    endfunction
+
+    function! LightLineFileformat()
+        return winwidth(0) > 70 ? &fileformat : ''
+    endfunction
+
+    function! LightLineFiletype()
+        return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
+    endfunction
+
+    function! LightLineFileencoding()
+        return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
+    endfunction
+
+    function! LightLineMode()
+        return winwidth(0) > 60 ? lightline#mode() : ''
+    endfunction
 
 " Misc. Mappings (Try to keep fairly vanilla)
     map <C-n> :NERDTreeToggle<CR>
