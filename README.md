@@ -9,14 +9,13 @@ Covers
    + [x] Go
    + [x] Zshell
    + [x] Common utilities (git, mercurial, wget, ssh-copy-id, htop)
- + [ ] Vim
-   + [ ] Config
-   + [ ] Bundles
-   + [ ] Custom functions
-   + [ ] Syntax
- + [ ] Tmux
- + [ ] Zshrc
- + [ ] Bash functions
+ + [x] Vim
+   + [x] Config
+   + [x] Bundles
+   + [x] Custom functions
+   + [x] Syntax
+ + [x] Tmux
+ + [x] Zshrc
  + [ ] Installing symlinks
  + [ ] Removing symlinks
 
