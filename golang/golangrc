@@ -1,0 +1,6 @@
+#!/bin/bash
+
+export GOPATH=$HOME/Development/go
+export HAILOGO=$HOME/Development/go/src/github.com/hailocab
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOBIN
