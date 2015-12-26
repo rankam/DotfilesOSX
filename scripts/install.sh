@@ -33,6 +33,10 @@ which -s mongodb || brew install mongodb
 which -s redis || brew install redis
 which -s memcached || brew install memcached
 
+# Install git submodules
+git submodule init
+git submodule update
+
 # Install programming languages
 
 ## Python
