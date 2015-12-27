@@ -18,6 +18,7 @@
         NeoBundle 'Shougo/neosnippet.vim'
         NeoBundle 'Shougo/neosnippet-snippets'
         NeoBundle 'tpope/vim-fugitive'
+        NeoBundle 'gregsexton/gitv'
         NeoBundle 'ctrlpvim/ctrlp.vim'
         NeoBundle 'fatih/vim-go'
         NeoBundle 'terryma/vim-multiple-cursors'
