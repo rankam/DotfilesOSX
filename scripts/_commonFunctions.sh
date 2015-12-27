@@ -14,3 +14,11 @@ function listSymlinkFiles() {
         -not -path '*files/*'\
         -maxdepth 2 -mindepth 2
 }
+
+# Generates a backup directory, which should be in the form of
+# 'dotfiles-2015-12-26-11'
+function generateBackupDirectory() {
+    NOW=$(date +"%Y-%m-%d-%M")
+    FILE_PREFIX="dotfiles"
+    echo ${FILE_PREFIX}-${NOW}
+}

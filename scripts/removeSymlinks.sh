@@ -1,12 +1,11 @@
 #!/bin/bash
-
-NOW=$(date +"%Y-%m-%d-%M")
-DESTINATION_DIR=$HOME
-BACKUP_DIR=$DESTINATION_DIR/dotfiles_$NOW
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Import the functions
 source $DIR/_commonFunctions.sh
+
+DESTINATION_DIR=$HOME
+BACKUP_DIR=$DESTINATION_DIR/$(generateBackupDirectory)
 
 [[ -d $BACKUP_DIR ]] || mkdir $BACKUP_DIR
 
@@ -17,12 +16,12 @@ do
     BAK_DESTINATION=$BACKUP_DIR/.$FILE
     SL_DESTINATION=$DESTINATION_DIR/.$FILE
 
-    STUFF=$(ls -la $SL_DESTINATION | grep $SOURCE)
+    DO_MOVE=$(ls -la $SL_DESTINATION | grep $SOURCE)
     if [[ $? != 0 ]] ; then
         echo "File $SL_DESTINATION does not link to expected symlink, skipping"
     else
         echo "Backing up file from $SL_DESTINATION to $BAK_DESTINATION"
-        # mv $SL_DESTINATION $BAK_DESTINATION
+        mv $SL_DESTINATION $BAK_DESTINATION
     fi
 
 done
