@@ -6,7 +6,7 @@ OSX Dotfiles
 These are my most recent dotfiles. Things to note are:
 
  + This is focused on Vim as an editor and uses NeoBundle
- + This is focused on programming, primarily Go
+ + This is geared towards programming, primarily Go
  + It's only intended to work with OSX
  + It relies on Homebrew (and it's dependencies, you'll need XCode setup)
  + It automatically generates symbolic links from files one level deep,
