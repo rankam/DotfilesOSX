@@ -81,3 +81,14 @@ should be safe to run alongisde any other dotfiles you have.
 
     cd ~/DotfilesOSX
     bash ./scripts/removeSymlinks.sh
+
+## Finishing touches
+
+The caps lock really gets in the way. With some software you can remap it to
+another key in Vim, such as ESC and leave it be in other applications.
+Personally I just disable it and don't ever use it.
+
+To disable, navigate to:
+ > System Preferences > Keyboard > Modifier Keys...
+
+Then set Caps Lock to 'No Action'
