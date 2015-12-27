@@ -71,3 +71,11 @@ Installation
  2. Double click on 'Visor.terminal' and install
  3. If you're using Total Terminal, this will work by default, otherwise open
     your terminal preferences and choose this.
+
+## Removing symlinks
+
+This will only remove symlinks that are pointing to this repository, so it
+should be safe to run alongisde any other dotfiles you have.
+
+    cd ~/DotfilesOSX
+    bash ./scripts/removeSymlinks.sh
