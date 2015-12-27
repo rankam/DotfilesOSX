@@ -1,6 +1,8 @@
 OSX Dotfiles
 ============
 
+![Screenshot of Tmux + Vim](https://raw.github.com/Ganners/DotfilesOSX/master/files/screenshot_1.png)
+
 These are my most recent dotfiles. Things to note are:
 
  + This is focused on Vim as an editor and uses NeoBundle
