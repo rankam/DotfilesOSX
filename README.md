@@ -7,9 +7,9 @@ These are my most recent dotfiles. Things to note are:
 
  + This is focused on Vim as an editor and uses NeoBundle
  + This is geared towards programming, primarily Go
- + It's only intended to work with OSX
- + It relies on Homebrew (and it's dependencies, you'll need XCode setup)
- + It automatically generates symbolic links from files one level deep,
+ + This is only intended to work with OSX
+ + This relies on Homebrew (and it's dependencies, you'll need Xcode setup)
+ + This automatically generates symbolic links from files one level deep,
    ignoring the top level directory (so it can be used for organisational
    purposes). It will only generate dotfiles (I.e. it will always add the dot
    prefix to files).
