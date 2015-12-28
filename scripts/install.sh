@@ -121,4 +121,8 @@ if [[ $? != 0 ]] ; then
     brew install node
 fi
 
-
+## Haskell (GHC)
+which -s ghc
+if [[ $? != 0 ]] ; then
+    brew install ghc cabal-install
+fi
