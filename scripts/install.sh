@@ -73,22 +73,22 @@ if [[ $? != 0 ]] ; then
     pip install sympy
 fi
 
-## PHP (5.6)
-which -s php56
+## PHP
+which -s php
 if [[ $? != 0 ]] ; then
     echo "Installing Php"
-    brew install php56
-    brew install php56-gmagick
-    brew install php56-imagick
-    brew install php56-leveldb
-    brew install php56-mcrypt
-    brew install php56-memcache
-    brew install php56-memcached
-    brew install php56-mongo
-    brew install php56-protobuf
-    brew install php56-solr
-    brew install php56-xdebug
-    brew install php56-zookeeper
+    brew install php
+    brew install php-gmagick
+    brew install php-imagick
+    brew install php-leveldb
+    brew install php-mcrypt
+    brew install php-memcache
+    brew install php-memcached
+    brew install php-mongo
+    brew install php-protobuf
+    brew install php-solr
+    brew install php-xdebug
+    brew install php-zookeeper
 
     # Install composer
     which -s composer
