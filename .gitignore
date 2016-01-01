@@ -10,4 +10,9 @@ Thumbs.DB
 vim/vim/.netrwhist
 
 # NeoBundle Ignores
+# =====================================
 vim/vim/bundle/*
+
+# Php
+# =====================================
+composer.phar
