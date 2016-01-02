@@ -27,6 +27,7 @@ which -s vim || brew install vim
 which -s tmux || brew install tmux
 which -s htop || brew install htop
 which -s wget || brew install wget
+which -s wemux || brew install wemux
 which -s ctags || brew install ctags
 which -s ssh-copy-id || brew install ssh-copy-id
 
