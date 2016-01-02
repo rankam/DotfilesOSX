@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Install git submodules
+git submodule init
+git submodule update
+
 # Install homebrew
 which -s brew
 if [[ $? != 0 ]] ; then
@@ -50,10 +54,6 @@ which -s zsh || brew install zsh
 if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
     chsh -s $(which zsh)
 fi
-
-# Install git submodules
-git submodule init
-git submodule update
 
 # Install programming languages
 
