@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Install git submodules
+git submodule init
+git submodule update
+
 # Install homebrew
 which -s brew
 if [[ $? != 0 ]] ; then
@@ -23,7 +27,8 @@ which -s vim || brew install vim
 which -s tmux || brew install tmux
 which -s htop || brew install htop
 which -s wget || brew install wget
-which -s ctags || brew install ctags
+which -s wemux || brew install wemux
+which -s ctags || brew install ctags-exuberant
 which -s ssh-copy-id || brew install ssh-copy-id
 
 # Install grep (might be required for powerline on tmux)
@@ -51,10 +56,6 @@ if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
     chsh -s $(which zsh)
 fi
 
-# Install git submodules
-git submodule init
-git submodule update
-
 # Install programming languages
 
 ## Python
@@ -73,22 +74,22 @@ if [[ $? != 0 ]] ; then
     pip install sympy
 fi
 
-## PHP (5.6)
-which -s php56
+## PHP
+which -s php
 if [[ $? != 0 ]] ; then
     echo "Installing Php"
-    brew install php56
-    brew install php56-gmagick
-    brew install php56-imagick
-    brew install php56-leveldb
-    brew install php56-mcrypt
-    brew install php56-memcache
-    brew install php56-memcached
-    brew install php56-mongo
-    brew install php56-protobuf
-    brew install php56-solr
-    brew install php56-xdebug
-    brew install php56-zookeeper
+    brew install php
+    brew install php-gmagick
+    brew install php-imagick
+    brew install php-leveldb
+    brew install php-mcrypt
+    brew install php-memcache
+    brew install php-memcached
+    brew install php-mongo
+    brew install php-protobuf
+    brew install php-solr
+    brew install php-xdebug
+    brew install php-zookeeper
 
     # Install composer
     which -s composer
