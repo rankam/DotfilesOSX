@@ -22,3 +22,5 @@
     smtpuser = mark@ganners.co.uk
     smtpserverport = 587
     suppresscc = self
+[url "git@github.com:"]
+    insteadOf = https://github.com/
