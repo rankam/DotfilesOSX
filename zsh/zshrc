@@ -17,3 +17,6 @@ source $ZSH/oh-my-zsh.sh
 if [ -f /usr/local/bin/vim ]; then
     export EDITOR=/usr/local/bin/vim
 fi
+
+# Import scripts into path
+export PATH=$PATH:$HOME/.scripts
