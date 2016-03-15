@@ -26,6 +26,7 @@
         NeoBundle 'tpope/vim-markdown'
         NeoBundle 'majutsushi/tagbar'
         NeoBundle 'itchyny/lightline.vim'
+        NeoBundle 'godlygeek/tabular'
 
     call neobundle#end()
 
