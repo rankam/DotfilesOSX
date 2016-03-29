@@ -67,6 +67,7 @@ if [[ $? != 0 ]] ; then
     brew install python
 
     # Note: Pip should be installed with python
+    pip install --upgrade pip
 
     # Install data science stuff
     pip install numpy
