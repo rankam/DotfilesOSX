@@ -30,6 +30,7 @@ which -s wget || brew install wget
 which -s wemux || brew install wemux
 which -s ctags || brew install ctags-exuberant
 which -s ssh-copy-id || brew install ssh-copy-id
+which -s graphviz || brew install graphviz
 
 # Install grep (might be required for powerline on tmux)
 brew tap homebrew/dupes
@@ -72,6 +73,8 @@ if [[ $? != 0 ]] ; then
     pip install scipy
     pip install matplotlib
     pip install sympy
+    pip install git+https://github.com/Theano/Theano.git@e891fb3
+    pip install git+https://github.com/fchollet/keras.git@1e58b89
 fi
 
 ## PHP
