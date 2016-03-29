@@ -74,8 +74,9 @@ if [[ $? != 0 ]] ; then
     pip install scipy
     pip install matplotlib
     pip install sympy
-    pip install git+https://github.com/Theano/Theano.git@e891fb3
-    pip install git+https://github.com/fchollet/keras.git@1e58b89
+    pip install nose
+    pip install git+https://github.com/Theano/Theano.git@feeb079
+    pip install git+https://github.com/fchollet/keras.git@657b9fb
 fi
 
 ## PHP
